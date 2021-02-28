@@ -8,7 +8,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Quiz from "./components/Quiz";
+import QuizContent from "./components/Quiz";
 
 // const qBank = getQuiz(); 
 
@@ -19,16 +19,11 @@ function App() {
   return (
     <Router>
       <div className="App">
-
-        {/* {
-          qBank.map((questionId) => (<h1>{questionId}</h1>))
-        } */}
-        
         <Switch>
             <Route path="/quiz">
-              <Quiz />
+              <QuizContent />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
               <Home />
             </Route>
         </Switch>

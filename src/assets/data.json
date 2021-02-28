@@ -4,20 +4,20 @@
 
     "question": {
       "id": 1,
-      "char": "あ"
+      "kana": "あ"
     },
 
     "answers": [  {
       "id": 6,
-      "char": "か"
+      "kana": "か"
     },
     {
       "id": 1,
-      "char": "あ"
+      "kana": "あ"
     },
     {
       "id": 8,
-      "char": "く"
+      "kana": "く"
     }]
 
   },
@@ -26,20 +26,20 @@
 
     "question": {
       "id": 6,
-      "char": "か"
+      "kana": "か"
     },
 
     "answers": [  {
       "id": 6,
-      "char": "か"
+      "kana": "か"
     },
     {
       "id": 1,
-      "char": "あ"
+      "kana": "あ"
     },
     {
       "id": 8,
-      "char": "く"
+      "kana": "く"
     }]
 
   },
@@ -48,20 +48,20 @@
 
     "question": {
       "id": 8,
-      "char": "く"
+      "kana": "く"
     },
 
     "answers": [  {
       "id": 6,
-      "char": "か"
+      "kana": "か"
     },
     {
       "id": 1,
-      "char": "あ"
+      "kana": "あ"
     },
     {
       "id": 8,
-      "char": "く"
+      "kana": "く"
     }]
 
   }

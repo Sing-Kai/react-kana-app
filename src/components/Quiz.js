@@ -1,16 +1,48 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import QuizData from '../assets/data.json'
 import Answer from './Answer';
 import Question from "./Question";
+import {useQuery, QueryClient, QueryClientProvider}from 'react-query';
+import axios from 'axios'
+
+const queryClient = new QueryClient();
+
+// const QuizContent = () => {
+//   // const {inputText} = useSearch();
+//   const inputText = "testing"
+//   // if(inputText === "") return <div className = "search-term"></div>
+//   return (
+//     <QueryClientProvider client ={queryClient}>
+//       <Quiz initialIsOpen={false}/> 
+//     </QueryClientProvider>
+//   );
+// }
+
+const QuizContent = () => {
+
+  const [quiz, setQuiz] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios('http://localhost:8080/quiz');
+      var quiz = response.data;
+      setQuiz(quiz);
+    }
+    fetchData();
+  }, []);
+
+  if (quiz === undefined || quiz.length === 0){
+    console.log('Loading Quiz')
+    return (<div>Loading Quizz</div>)
+  }
+  return (<div><Quiz qdata = {quiz}/></div>)
+}
 
 
-const Quiz = () =>{
+const Quiz = ({qdata}) =>{
 
   const [questionId, setQuestionId] = useState(0);
-
-  //fetch quiz data from here 
-  const data = QuizData;
-
+  const data = qdata;
   const answerClick =(id)=>{
 
     if(id === data[questionId].question.id){
@@ -32,7 +64,7 @@ const Quiz = () =>{
         {data[questionId].answers.map((ans) => 
         (<Answer key = {ans.id} 
                  id = {ans.id} 
-                 char ={ans.char} 
+                 kana ={ans.hiri} 
                  questionId={data[questionId].question.id} 
                  answerClick ={answerClick}/>))}
       </div>
@@ -41,4 +73,4 @@ const Quiz = () =>{
   )
 }
 
-export default Quiz
+export default QuizContent

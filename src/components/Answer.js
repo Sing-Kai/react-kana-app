@@ -1,7 +1,6 @@
 import React, {useState, useEffect}from 'react'
 
-const Answer = ({id, char, questionId, answerClick}) =>{
-
+const Answer = ({id, kana, questionId, answerClick}) =>{
 
   const white = "white"
   const correct = "rgb(167, 250, 205)"
@@ -52,7 +51,7 @@ const Answer = ({id, char, questionId, answerClick}) =>{
             onMouseOver={onMouseOver}
             onMouseOut={onMouseOut}
             >
-        {char}
+        {kana}
       </div>
   )
 }
