@@ -8,13 +8,16 @@ import {
 
 export default class Home extends Component {
 
-
-
   render() {
     return (
       <div>
         <h1>Home</h1>
-        <Link to='/quiz'>Start Quiz</Link>
+          <div>
+            <Link to='/quiz'>Start Quiz</Link>
+          </div>
+          <div>
+            <Link to='/settings'>Settings</Link>
+          </div>
       </div>
     )
   }

@@ -38,7 +38,6 @@ const QuizContent = () => {
   return (<div><Quiz qdata = {quiz}/></div>)
 }
 
-
 const Quiz = ({qdata}) =>{
 
   const [questionId, setQuestionId] = useState(0);

@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import getQuiz from './quizService/index';
 import Home from "./components/Home";
 import {
   BrowserRouter as Router,
@@ -9,10 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import QuizContent from "./components/Quiz";
-
-// const qBank = getQuiz(); 
-
-// console.log(qBank)
+import Settings from "./components/Settings";
 
 function App() {
 
@@ -23,11 +18,13 @@ function App() {
             <Route path="/quiz">
               <QuizContent />
             </Route>
+            <Route path="/settings">
+              <Settings />
+            </Route>            
             <Route exact path="/">
               <Home />
             </Route>
         </Switch>
-
       </div>
     </Router>
   );
